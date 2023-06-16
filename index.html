@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Red+Hat+Display:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
+    <title>Envios de mensajes CDA</title>
+</head>
+<body>
+    <header>
+        <section class="header-right">
+            <p>Envio automatico de mensajes</p>
+        </section>
+        <section class="header-left">
+            <p>CDA Autopista</p>
+        </section>
+    </header>
+<main>
+    <div class="cuadro-consulta">
+    <h1>Para realizar el envio</h1>
+    <p>Se debe cargar un archivo .xslx  <br> Las columnas deben tener la misma ubicacion y nombre que se ilustra en la imagen</p>
+    <img src="./muestraExcel.jpeg" alt="Ejemplo de archivo de excel">
+    <input type="file" id="file" onchange="loadFile()">
+    <button id="enviar" class="inactive">enviar</button>
+    <button id="consultarAPI">Realizar consulta</button>
+    <div id="app"></div>
+    </div>
+    <article id="container--loading" class="container--loading inactive">
+        <p>Estamos procesando tu solicitud</p>
+        <div class="container--loading-element">
+            <div class="loading"></div>
+            <div class="loading"></div>
+            <div class="loading"></div>
+        </div>
+    </article>
+    
+</main>
+<footer>
+    <h2>elaborado por: <br>Juan Felipe Londoño</h2>
+</footer>
+ 
+    <script src="https://unpkg.com/xlsx@0.15.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
