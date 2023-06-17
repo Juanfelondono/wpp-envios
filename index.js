@@ -1,12 +1,14 @@
 
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
+const { placas, fechas, numbers } = require('./datos.js');
+
 
 const client = new Client();
 
 const fd = new Date();
 const dI= fd.getDate();
-if(dI != 15 ) {
+if(dI != 16 ) {
   client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
   });
@@ -16,11 +18,8 @@ if(dI != 15 ) {
     console.log('Cliente de WhatsApp está listo!');
   
     try {
-      const placas = ["XZY27D", "XZY27D", "XZY27D", "XZY27D",]
-  
-      const fechas = ["26/07/2023", "27/07/2023", "28/07/2023", "28/07/2023",]
-  
-      const numbers = ["573107215513", "573107215513", "57315513", "573107215513", ]; // Números de teléfono a los que se enviará el mensaje
+    
+      // Números de teléfono a los que se enviará el mensaje, fecha y placas los importo desde datos.js
       
       const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   
