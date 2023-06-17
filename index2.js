@@ -1,4 +1,3 @@
-
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const { placas, fechas, numbers } = require('./datos.js');
@@ -31,7 +30,7 @@ if(dI != 16 ) {
           index++
           continue; // Pasar al siguiente número si no tiene WhatsApp
         }
-        const message = `Buen dia! te habla *NICOL YULIANA* 👩🏻‍💼 asesora del *CDA CIUDAD BONITA*, te informamos el vencimiento de tu *REVISION TECNICOMECANICA* DEL VEHICULO DE PLACA *${placas[index]} EL ${fechas[index]}*\n\n*Financiamos tu SOAT y Revisión*\n\n*Estamos ubicados en la Carrera 15 No. 11-56 Barrio Gaitán*\n\n*Nuestro horario de atención*\n\nLunes a Viernes de 6:30 am A 6:00 pm\nSabados: 6:30 am a 4:30 pm\nDomingos y Festivos: 8:00am a 12:00 m\n\nTe Esperamos 🏍️ 🚗 🚛`;
+        const message = `Buen dia! te habla *NICOL YULIANA* 👩🏻‍💼 asesora del *CDA CIUDAD BONITA*, te informamos el vencimiento de tu *REVISION TECNICOMECANICA* DEL VEHICULO DE PLACA *${placas[index]} SE TE VENCE EL DIA DE MAÑANA ${fechas[index]}*\n\n*Financiamos tu SOAT y Revisión*\n\n*Estamos ubicados en la Carrera 15 No. 11-56 Barrio Gaitán*\n\n*Nuestro horario de atención*\n\nLunes a Viernes de 6:30 am A 6:00 pm\nSabados: 6:30 am a 4:30 pm\nDomingos y Festivos: 8:00am a 12:00 m\n\nTe Esperamos 🏍️ 🚗 🚛`;
   
         await client.sendMessage(`${number}@c.us`, message); // Envío del mensaje
         console.log(`Mensaje enviado correctamente al número ${number}, mensaje numero ${index+1} de ${numbers.length}`);
@@ -52,4 +51,3 @@ if(dI != 16 ) {
 }else {
   console.log("Licencia vencida contacte a su provedor")
 }
-
